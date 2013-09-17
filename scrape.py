@@ -16,11 +16,11 @@ class INIFile:
 		configFile = open(filePath,'r')
 		info = configFile.readlines()
 		for i in info:
-			colon = i.find(':')
+			eq = i.find('=')
 			# Only lines containing a colon are processed:
-			if (colon >= 0):
-				key = i[:i.find(':')]
-				data = i[i.find(':')+2:len(i)-1]
+			if (eq >= 0):
+				key = i[:eq]
+				data = i[eq+1:len(i)-1]
 				if (key in self.config):
 					self.config[key] += [data]
 				else:
