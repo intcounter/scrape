@@ -4,19 +4,24 @@ scrape
 scrape is an application for scraping web sites and rss feeds, performing actions and/or notifications
 whenever search actions succeed
 
+
 BACKGROUND:
 
 scrape consists of three primary components:
+
   ./scrape.py - The script orchestrating the page scraping. scrape.py oversees a collection of scraping
       agents (one per site that you would like to monitor). The scraping agents access pages at random
       intervals and perform searches (actions) on the results. When an action succeeds (a certain term
       is found to be present, absent, etc.), scrape.py can spawn an appropriate process and/or send a
       notification email. The behavior of each agent is managed in an initialization file.
+
   ./scrape.ini - An initialization file for the scraping program itself, containing settings for email
       notifications and for specifying the location of the agent files. See scrape.ini for more details
       on the program's settings.
+
   ./agents/* - A collection of initialization files for the scraping agents. See the sample agent
       initialization file for more details on scraping agents' settings.
+
 
 GETTING STARTED:
 
